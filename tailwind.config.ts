@@ -13,6 +13,11 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      Satoshi: ["var(--font-Satoshi)"],
+      Inter: ["var(--font-Inter)"],
+      InterBold: ["var(--font-InterBold)"],
+    },
   },
   plugins: [],
 } satisfies Config;
