@@ -5,38 +5,65 @@ import { useState } from "react";
 interface FaqItem {
   question: string;
   answer: string;
+  category: string;
 }
+
+type Category = "General" | "Payments" | "Licensing" | "Support";
 
 const faqData: FaqItem[] = [
   {
+    category: "General",
     question: "What is Aptly?",
     answer:
       "Aptly is a modern platform designed to help you build amazing products faster. We provide tools and resources that streamline your development workflow and enhance productivity.",
   },
   {
+    category: "General",
     question: "How do I get started?",
     answer:
       "Getting started is easy! Simply sign up for an account, choose your preferred plan, and follow our comprehensive onboarding guide. You'll be up and running in minutes.",
   },
   {
+    category: "General",
     question: "What features are included?",
     answer:
       "Our platform includes a comprehensive suite of features including project management tools, collaboration features, analytics dashboard, API access, and premium support. Check out our pricing page for detailed feature comparison.",
   },
   {
+    category: "Payments",
     question: "Is there a free trial?",
     answer:
       "Yes! We offer a 14-day free trial with full access to all features. No credit card required. You can cancel anytime during the trial period.",
   },
   {
+    category: "Payments",
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and wire transfers for enterprise customers. All transactions are securely processed.",
+  },
+  {
+    category: "Licensing",
+    question: "How does licensing work?",
+    answer:
+      "Our licensing is user-based. Each license covers one user account. You can upgrade or downgrade your plan at any time, and licenses can be transferred between team members.",
+  },
+  {
+    category: "Licensing",
+    question: "Can I cancel my subscription anytime?",
+    answer:
+      "Absolutely! You can cancel your subscription at any time from your account settings. There are no cancellation fees, and you'll continue to have access until the end of your billing period.",
+  },
+  {
+    category: "Support",
     question: "How secure is my data?",
     answer:
       "Security is our top priority. We use industry-standard encryption, regular security audits, and comply with GDPR and SOC 2 standards. Your data is stored in secure, redundant servers with automatic backups.",
   },
   {
-    question: "Can I cancel my subscription anytime?",
+    category: "Support",
+    question: "What support options are available?",
     answer:
-      "Absolutely! You can cancel your subscription at any time from your account settings. There are no cancellation fees, and you'll continue to have access until the end of your billing period.",
+      "We offer 24/7 email support for all plans, live chat for Pro and Enterprise plans, and dedicated account managers for Enterprise customers. Our average response time is under 2 hours.",
   },
 ];
 
@@ -64,15 +91,15 @@ function FaqItem({ item, isOpen, onToggle }: FaqItemProps) {
             }`}
           >
             <svg
-              width="24"
-              height="24"
+              width="12"
+              height="12"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-blue-600"
+              className="text-black"
             >
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
@@ -95,10 +122,22 @@ function FaqItem({ item, isOpen, onToggle }: FaqItemProps) {
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>("General");
+
+  const categories: Category[] = [
+    "General",
+    "Payments",
+    "Licensing",
+    "Support",
+  ];
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const filteredFaqs = faqData.filter(
+    (item) => item.category === activeCategory
+  );
 
   return (
     <section className="py-20 px-4 bg-white">
@@ -116,9 +155,31 @@ export function Faq() {
           </p>
         </div>
 
+        {/* Category Tabs */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-gray-100 rounded-full p-1 gap-1">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setOpenIndex(null);
+                }}
+                className={`font-Inter px-6 py-2.5 rounded-full text-[14px] font-medium transition-all duration-200 ${
+                  activeCategory === category
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* FAQ Items */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-          {faqData.map((item, index) => (
+          {filteredFaqs.map((item, index) => (
             <FaqItem
               key={index}
               item={item}
