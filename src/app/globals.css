@@ -2,9 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Inter Light";
+  src: url("/fonts/Inter-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter Medium";
+  src: url("/fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-InterLight: "Inter Light";
+  --font-InterMedium: "Inter Medium";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +40,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.font-InterLight {
+  font-family: "Inter Light";
+}
+
+.font-InterMedium {
+  font-family: "Inter Medium";
 }

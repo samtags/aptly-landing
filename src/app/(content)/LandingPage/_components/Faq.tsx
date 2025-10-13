@@ -78,10 +78,10 @@ function FaqItem({ item, isOpen, onToggle }: FaqItemProps) {
     <div className="font-Inter border-b border-gray-200 last:border-b-0">
       <button
         onClick={onToggle}
-        className="w-full py-6 px-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200 group"
+        className="w-full py-6 px-6 flex items-center justify-between text-left transition-colors duration-200 group"
         aria-expanded={isOpen}
       >
-        <span className="font-medium  text-[14px] leading-[20px] text-gray-900 pr-8 group-hover:text-blue-600 transition-colors">
+        <span className="font-medium text-[14px] leading-[20px] text-gray-900 pr-8 transition-colors">
           {item.question}
         </span>
         <div className="flex-shrink-0 ml-4">
@@ -96,7 +96,7 @@ function FaqItem({ item, isOpen, onToggle }: FaqItemProps) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-black"
@@ -112,7 +112,7 @@ function FaqItem({ item, isOpen, onToggle }: FaqItemProps) {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className=" font-normal text-[12px] px-6 pb-6 text-gray-600 leading-relaxed">
+        <div className="font-normal text-[12px] px-6 pb-6 text-gray-600 leading-relaxed">
           {item.answer}
         </div>
       </div>
@@ -144,12 +144,16 @@ export function Faq() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center items-center mb-16">
-          <h2 className="font-Satoshi font-bold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-gray-900 mb-4">
-            <span className="text-gray-400">Have questions?</span>
+          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
+            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+              Have questions?
+            </span>
             <br />
-            <span>We got answers.</span>
+            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+              We got answers.
+            </span>
           </h2>
-          <p className="font-Inter text-[14px] text-gray-600 max-w-2xl mx-auto md:text-[16px] leading-[24px]">
+          <p className="font-InterLight text-[#555a68] mx-auto">
             We compiled a list of answers to address your <br /> most pressing
             questions.
           </p>
@@ -165,10 +169,10 @@ export function Faq() {
                   setActiveCategory(category);
                   setOpenIndex(null);
                 }}
-                className={`font-Inter px-6 py-2.5 rounded-full text-[14px] font-medium transition-all duration-200 ${
+                className={`px-6 py-2.5 rounded-full text-[14px] transition-all duration-500 ${
                   activeCategory === category
-                    ? "bg-white text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900"
+                    ? "font-InterMedium text-[#0f1115] bg-white shadow-md"
+                    : "text-gray-500 hover:text-[#0f1115]"
                 }`}
               >
                 {category}
@@ -178,7 +182,7 @@ export function Faq() {
         </div>
 
         {/* FAQ Items */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
           {filteredFaqs.map((item, index) => (
             <FaqItem
               key={index}

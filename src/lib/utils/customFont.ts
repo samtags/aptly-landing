@@ -1,18 +1,23 @@
 import localFont from "next/font/local";
 
 const Satoshi = localFont({
-    src: [{path: "../../../public/fonts/Satoshi-Variable.ttf"}],
-    variable: "--font-Satoshi"
-})
+  src: [{ path: "../../../public/fonts/Satoshi-Variable.ttf" }],
+  variable: "--font-Satoshi",
+});
 
 const Inter = localFont({
-    src: [{path: "../../../public/fonts/Inter-Regular.otf"}],
-    variable: "--font-Inter"
-})
+  src: [{ path: "../../../public/fonts/Inter-Regular.otf" }],
+  variable: "--font-Inter",
+});
 
 const InterBold = localFont({
-    src: [{path: "../../../public/fonts/Inter-Bold.otf"}],
-    variable: "--font-InterBold"
-})
+  src: [{ path: "../../../public/fonts/Inter-Bold.otf" }],
+  variable: "--font-InterBold",
+});
 
-export { Satoshi, Inter, InterBold };
+const InterLight = localFont({
+  src: [{ path: "../../../public/fonts/Inter-Light.ttf" }],
+  variable: "--font-InterLight",
+});
+
+export { Satoshi, Inter, InterBold, InterLight };
