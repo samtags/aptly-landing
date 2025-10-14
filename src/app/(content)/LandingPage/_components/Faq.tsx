@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { GrSend } from "react-icons/gr";
 import { LiaQuestionCircleSolid } from "react-icons/lia";
+import { SectionBadge } from "./SectionBadge";
 
 export function Faq() {
   const [_, setOpenIndex] = useState<number | null>(null);
@@ -110,20 +111,6 @@ function QuestionCard() {
           </div>
         </div>
       )}
-    </div>
-  );
-}
-
-interface SectionBadgeProps {
-  Icon: React.ElementType;
-  title: string;
-}
-
-export function SectionBadge({ Icon, title }: SectionBadgeProps) {
-  return (
-    <div className="text-[#333842] font-InterMedium text-[12px] border-[#d9dfe8] border rounded-full pt-[6px] pl-[12px] pb-[6px] pr-[16px] flex items-center gap-2">
-      <Icon strokeWidth={0.5} className="text-[#133cf0] text-[16px]" />
-      {title}
     </div>
   );
 }
