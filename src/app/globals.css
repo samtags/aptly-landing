@@ -56,3 +56,37 @@ body {
     rgba(0, 0, 0, 0.02) 0px 1.37312px 2.47162px -0.5px,
     rgba(0, 0, 0, 0.05) 0px 6px 10.8px -0.75px;
 }
+
+.pricing-card-box-shadow {
+  box-shadow: 0px 1px 2px 0px #5959590f,
+    0px 0.301094px 0.541969px -0.833333px #3039543d,
+    0px 1.14427px 2.05968px -1.66667px #3039543d, 0px 5px 9px -2.5px #3039543d,
+    0px -0.5px 0px 0px #e5eaf0;
+}
+
+.pricing-shadow {
+  box-shadow: 0 2px 6px -4px #0f193d29, 0 3.69513px 1.84757px -0.625px #27282a03,
+    0 8.75811px 4.37906px -1.25px #27282a03,
+    0 15.9757px 7.98785px -1.875px #27282a03,
+    0 26.5596px 13.2798px -2.5px #27282a03,
+    0 42.8915px 21.4458px -3.125px #27282a03,
+    0 70.2092px 35.1046px -3.75px #27282a03,
+    0 120.895px 60.4477px -4.375px #27282a00, 0 220px 110px -5px #27282a00,
+    inset 0 0.3px 0 0.2px #d7e4f7;
+}
+
+.pricing-highlight {
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(
+    59deg,
+    #f5f9ff -1%,
+    #b6a9f5 55.8742%,
+    #3b5beb 100%
+  );
+  inset: 0 0 91px;
+  overflow: hidden;
+  mask: linear-gradient(#000 0%, #0000 100%);
+  -webkit-mask: linear-gradient(#000 0%, #0000 100%);
+  opacity: 0.15;
+}
