@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { GrSend } from "react-icons/gr";
+import { LiaQuestionCircleSolid } from "react-icons/lia";
 
 export function Faq() {
   const [_, setOpenIndex] = useState<number | null>(null);
@@ -10,6 +11,9 @@ export function Faq() {
 
   return (
     <section className="py-20 px-4 bg-white">
+      <div className="flex justify-center mb-6">
+        <SectionBadge Icon={LiaQuestionCircleSolid} title="FAQs" />
+      </div>
       <div className="max-w-4xl mx-auto">
         <div className="text-center items-center mb-16">
           <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
@@ -106,6 +110,20 @@ function QuestionCard() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+interface SectionBadgeProps {
+  Icon: React.ElementType;
+  title: string;
+}
+
+export function SectionBadge({ Icon, title }: SectionBadgeProps) {
+  return (
+    <div className="text-[#333842] font-InterMedium text-[12px] border-[#d9dfe8] border rounded-full pt-[6px] pl-[12px] pb-[6px] pr-[16px] flex items-center gap-2">
+      <Icon strokeWidth={0.5} className="text-[#133cf0] text-[16px]" />
+      {title}
     </div>
   );
 }
