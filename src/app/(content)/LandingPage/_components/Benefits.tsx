@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils/cn";
 
 export function Benefits() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-white max-w-5xl mx-auto">
       <div className="flex justify-center mb-6">
         <SectionBadge
           strokeWidth={2}
@@ -39,7 +39,7 @@ export function Benefits() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <Benefit
           Icon={PiLightningDuotone}
           title="Build Faster"
@@ -109,13 +109,13 @@ function Benefit({
   return (
     <li
       className={cn(
-        "flex gap-4 p-10 border-dashed border-[#ebf0f5] relative",
-        borderRight && "border-r",
-        borderBottom && "border-b"
+        "flex flex-col md:flex-row gap-4 p-4 md:p-10 border-dashed border-[#ebf0f5] relative",
+        borderRight && "border-0 md:border-r",
+        borderBottom ? "border-b" : "border-b md:border-0"
       )}
     >
       {showBall && (
-        <div className="absolute top-[-12px] left-[-12px]">
+        <div className="absolute top-[-12px] left-[-12px] hidden lg:block">
           <Ball />
         </div>
       )}
