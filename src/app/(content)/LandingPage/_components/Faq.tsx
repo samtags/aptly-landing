@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
+import { GrSend } from "react-icons/gr";
 
 export function Faq() {
   const [_, setOpenIndex] = useState<number | null>(null);
@@ -51,11 +52,21 @@ export function Faq() {
           <QuestionCard />
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">Still have questions?</p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-            Contact Support
-          </button>
+        <div className="w-[700px] mx-auto mt-12">
+          <div className="flex justify-between items-center gap-4 text-center bg-[#f9fafb] rounded-2xl p-8">
+            <div className="text-left">
+              <header className="font-Satoshi text-[#0f1115] text-[20px] font-semibold">
+                Can{"'"}t find your answer?
+              </header>
+              <p className="text-[#555a68] text-[14px] font-InterLight">
+                Get in touch with us we are happy to assist you!
+              </p>
+            </div>
+            <button className="flex items-center gap-2 bg-[#3b5beb] hover:bg-[#284ae2] text-[#ffffff] px-6 py-3 rounded-full transition-colors font-Inter text-[14px]">
+              <GrSend />
+              Ask a Question
+            </button>
+          </div>
         </div>
       </div>
     </section>
