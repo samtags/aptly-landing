@@ -38,7 +38,7 @@ export function Pricing() {
         <PriceCard />
       </div>
 
-      <p className="text-center text-[12px] text-[#555a68] my-12">
+      <p className="text-center text-[12px] text-[#555a68] my-12 font-InterLight">
         Please choose an option based on the number of users <br /> you want to
         access the figma file.
       </p>
@@ -53,7 +53,7 @@ interface PriceCardProps {
 
 function PriceCard({ highlight, badge }: PriceCardProps) {
   return (
-    <div className="border-[#ebf0f5] border rounded-3xl bg-white p-2">
+    <div className={cn("border-[#ebf0f5] border rounded-3xl bg-white p-2")}>
       <div
         className={cn(
           "bg-[#f9fafb] p-2 rounded-3xl p-6 relative overflow-hidden",
