@@ -49,3 +49,10 @@ body {
 .font-InterMedium {
   font-family: "Inter Medium";
 }
+
+.faq-active-box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.01) 0px 0.361312px 0.650362px -0.25px,
+    rgba(0, 0, 0, 0.02) 0px 1.37312px 2.47162px -0.5px,
+    rgba(0, 0, 0, 0.05) 0px 6px 10.8px -0.75px;
+}

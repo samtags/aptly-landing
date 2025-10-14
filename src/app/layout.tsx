@@ -3,8 +3,9 @@ import "./globals.css";
 import { Inter, InterBold, Satoshi } from "@/lib/utils/customFont";
 
 export const metadata: Metadata = {
-  title: "Aptly Landing",
-  description: "Welcome to Aptly",
+  title: "Aptly | Realtime platform built for scale & reliability.",
+  description:
+    "Realtime that just works. Built to scale, engineered for reliability, and low latency.",
 };
 
 export default function RootLayout({
