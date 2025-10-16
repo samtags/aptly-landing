@@ -7,9 +7,9 @@ import Footer from "./_components/Footer";
 export default function LandingPage() {
   return (
     <div className="min-h-screen">
-      {/* <Hero /> */}
-      <Pricing />
+      <Hero />
       <Benefits />
+      <Pricing />
       <Faq />
       <Footer />
     </div>
