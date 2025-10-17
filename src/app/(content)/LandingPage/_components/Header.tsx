@@ -7,7 +7,6 @@ export default function Header() {
   const headerRef = useRef(null);
 
   const [isSticky, setIsSticky] = useState(false);
-  console.log("🚀 ~ Header ~ isSticky:", isSticky);
 
   useEffect(() => {
     function handleScroll() {
