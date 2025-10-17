@@ -98,3 +98,12 @@ body {
   grid-auto-rows: min-content;
   gap: 40px;
 }
+
+.nav-blur-bg {
+  backdrop-filter: blur(20px);
+  background-color: rgba(44, 74, 104, 0.08);
+  border-radius: 99px;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  will-change: auto;
+}

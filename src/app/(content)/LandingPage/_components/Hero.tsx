@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section className="pt-[160px]">
+    <section className="pt-[144px]">
       {" "}
       <div className="flex justify-center mb-6">
         <HeroBadge />
