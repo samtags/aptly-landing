@@ -18,8 +18,8 @@ export function Hero() {
             </span>
           </h2>
           <p className="font-InterLight text-[18px] text-[#555a68] mx-auto w-[515px]">
-            Ship consistant high-quality ui 10x faster with the most powerful
-            Figma ui kit & design system for designers
+            Power your app with real-time updates at any scale — fully managed,
+            zero maintenance, always live.
           </p>
         </div>
         <div className="flex gap-2 justify-center">
