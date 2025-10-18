@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section className="pt-[144px]">
@@ -7,13 +9,13 @@ export function Hero() {
       </div>
       <div className="max-w-4xl mx-auto">
         <div className="text-center items-center mb-10">
-          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
-            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+          <h2 className="font-Satoshi font-semibold leading-[36px] text-[48px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
+            <span className="text-[#0f1115] text-[48px] tracking-[-2px]">
               Pub-Sub That Just Works
             </span>
             <br />
 
-            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+            <span className="text-[#8b8f98] text-[48px] tracking-[-2px]">
               Built to Deliver
             </span>
           </h2>

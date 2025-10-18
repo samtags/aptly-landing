@@ -34,6 +34,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Inter, sans-serif;
+  overscroll-behavior: none;
+  overflow: scroll;
 }
 
 @layer utilities {
@@ -106,4 +108,80 @@ body {
   transform: none;
   transform-origin: 50% 50% 0px;
   will-change: auto;
+}
+
+.hero-bg {
+  -webkit-mask: radial-gradient(57% 57%, #000 0%, #0000 88.0367%);
+  mask: radial-gradient(57% 57%, #000 0%, #0000 88.0367%);
+  opacity: 0.4;
+  margin-top: -230px;
+  margin-left: 90px;
+  rotate: 180deg;
+}
+
+.bg-pattern {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  width: 100%;
+}
+
+.nav-line {
+  border-bottom-width: 1px;
+  border-color: #e1e1e1;
+  border-style: dashed;
+  z-index: 1;
+  flex: none;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 100px;
+  left: 0%;
+  overflow: hidden;
+}
+
+.verticle-lines {
+  pointer-events: none;
+  z-index: 1;
+  flex: none;
+  width: 100%;
+  max-width: 76rem;
+  position: absolute;
+  top: 0;
+  left: calc(50% - min(76rem, 100%) / 2);
+  overflow: visible;
+  height: 9000px;
+}
+
+.verticle-lines .left {
+  border-bottom-width: 0px;
+  border-color: #e5eaf0;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: dashed;
+  border-top-width: 0px;
+  flex: none;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: visible;
+}
+
+.verticle-lines .right {
+  border-bottom-width: 0px;
+  border-color: #e5eaf0;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: dashed;
+  border-top-width: 0px;
+  flex: none;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: visible;
 }
