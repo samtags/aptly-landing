@@ -10,24 +10,26 @@ import { cn } from "@/lib/utils/cn";
 
 export function Pricing() {
   return (
-    <section className="py-12 md:py-16 lg:py-20 px-4 bg-white">
-      <div className="flex justify-center mb-6">
-        <SectionBadge strokeWidth={2} Icon={PiGlobe} title="Pricing" />
-      </div>
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
-          <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
-            <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
-              Flexible pricing
-            </span>
-            <span className="text-[#0f1115] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block mt-1">
-              Built to fit your needs
-            </span>
-          </h2>
-          <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
-            Choose from tailored licenses that fits your business goals and
-            timeline.
-          </p>
+    <section id="pricing" className="py-12 md:py-16 lg:py-20 px-4 bg-white">
+      <div data-aos="fade-up">
+        <div className="flex justify-center mb-6">
+          <SectionBadge strokeWidth={2} Icon={PiGlobe} title="Pricing" />
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
+            <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
+              <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
+                Flexible pricing
+              </span>
+              <span className="text-[#0f1115] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block mt-1">
+                Built to fit your needs
+              </span>
+            </h2>
+            <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
+              Choose from tailored licenses that fits your business goals and
+              timeline.
+            </p>
+          </div>
         </div>
       </div>
 

@@ -11,12 +11,18 @@ export function Faq() {
   const [activeCategory, setActiveCategory] = useState<Category>("General");
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 px-4 bg-white">
-      <div className="flex justify-center mb-6">
-        <SectionBadge Icon={LiaQuestionCircleSolid} title="FAQs" />
+    <section id="faqs" className="py-12 md:py-16 lg:py-20 px-4 bg-white">
+      <div data-aos="fade-up">
+        <div className="flex justify-center mb-6">
+          <SectionBadge Icon={LiaQuestionCircleSolid} title="FAQs" />
+        </div>
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="250"
+          className="text-center items-center mb-10 md:mb-14 lg:mb-16"
+        >
           <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
             <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
               Have questions?

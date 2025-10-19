@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/cn";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import Link from "next/link";
 
 export default function Header() {
   const headerRef = useRef(null);
@@ -30,27 +31,24 @@ export default function Header() {
         )}
       >
         <div className="md:absolute md:left-6">
-          <div className="text-[#adafb3] font-Satoshi font-medium text-xl md:text-2xl">
-            Logo
+          <div className="text-black font-Satoshi font-black text-xl">
+            Aptly
           </div>
         </div>
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-[#555a68] text-[14px]">
           <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-            Benefits
+            <Link href="#features">Features</Link>
           </li>
           <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-            Foundation
+            <Link href="#pricing">Pricing</Link>
           </li>
           <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-            Features
+            <Link href="#faqs">FAQs</Link>
           </li>
           <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-            Pricing
-          </li>
-          <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-            FAQs
+            <Link href="https://docs.aptly.cloud">Resources</Link>
           </li>
         </ul>
 
@@ -75,20 +73,18 @@ export default function Header() {
         <div className="lg:hidden fixed top-[80px] left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-[#e5eaf0] shadow-lg mx-4 rounded-2xl">
           <ul className="flex flex-col text-[#555a68] text-[14px] p-4">
             <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
-              Benefits
+              <Link href="#features">Features</Link>
             </li>
             <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
-              Foundation
+              <Link href="#pricing">Pricing</Link>
             </li>
             <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
-              Features
+              <Link href="#faqs">FAQs</Link>
             </li>
             <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
-              Pricing
+              <Link href="https://docs.aptly.cloud">Resources</Link>
             </li>
-            <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
-              FAQs
-            </li>
+
             <li className="mt-2 px-4">
               <button className="w-full bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 py-3 rounded-full text-[14px] font-medium">
                 Sign-In
