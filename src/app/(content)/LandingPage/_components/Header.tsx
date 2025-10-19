@@ -8,15 +8,20 @@ import Link from "next/link";
 export default function Header() {
   const headerRef = useRef(null);
 
+  const [isReady, setIsReady] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    setIsSticky(window.scrollY > 120);
+
     function handleScroll() {
       setIsSticky(window.scrollY > 120);
     }
 
     window.addEventListener("scroll", handleScroll);
+
+    setIsReady(true);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -27,7 +32,8 @@ export default function Header() {
         className={cn(
           "flex justify-between md:justify-center items-center sticky top-4 z-10 mx-auto p-3 px-4 md:px-3",
           isSticky && "nav-blur-bg",
-          isSticky ? "max-w-4xl" : "max-w-6xl"
+          isSticky ? "max-w-4xl" : "max-w-6xl",
+          isReady ? "opacity-100" : "opacity-0"
         )}
       >
         <div className="md:absolute md:left-6">
