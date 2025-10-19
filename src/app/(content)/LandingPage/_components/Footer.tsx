@@ -2,6 +2,9 @@ import { LiaAtSolid } from "react-icons/lia";
 import { HiArrowRight } from "react-icons/hi";
 
 export default function Footer() {
+  const today = new Date();
+  const currentYear = today.getFullYear();
+
   return (
     <footer className="rounded-[52px] bg-[#f9fafb] m-6 pt-12">
       <div className="max-w-6xl mx-auto ">
@@ -62,9 +65,9 @@ export default function Footer() {
         </div>
         <div className="flex justify-between items-center py-8 text-[#333842]">
           <ul className="flex gap-2 text-[12px]">
-            <li>© 2025 Envision</li>
+            <li>© {currentYear} Aptly</li>
             <li>All rights reserved</li>
-            <li>Made by Rabii Mhamdi</li>
+            <li>Design by Rabii Mhamdi</li>
           </ul>
 
           <div className="flex">
