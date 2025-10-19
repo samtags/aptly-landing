@@ -9,7 +9,7 @@ import Patterns from "./_components/Patterns";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Blur />
       <Patterns />
       <Header />
