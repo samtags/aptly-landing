@@ -34,8 +34,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Inter, sans-serif;
-  overscroll-behavior: none;
-  overflow: scroll;
 }
 
 @layer utilities {
@@ -184,4 +182,20 @@ body {
   bottom: 0;
   right: 0;
   overflow: visible;
+}
+
+.horizontal-elements {
+  max-width: 76rem;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.horizontal-line {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  left: 0;
+  border-bottom-width: 1px;
+  border-color: #e1e1e1;
+  border-style: dashed;
 }
