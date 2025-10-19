@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -23,10 +23,14 @@ export function Hero() {
         </div>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center px-4 sm:px-0">
           <button className="bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-8 py-3 rounded-full text-[14px] font-medium w-full sm:w-auto">
-            Get Started
+            <Link target="_blank" href="https://docs.aptly.cloud">
+              Get Started
+            </Link>
           </button>
           <button className="bg-white text-[#333842] hover:bg-[#f9fafb] border border-[#d9dfe8] transition-all duration-300 px-6 py-3 rounded-full text-[14px] font-medium w-full sm:w-auto">
-            Try Live Demo
+            <Link target="_blank" href="https://demo.aptly.cloud">
+              Try Live Demo
+            </Link>
           </button>
         </div>
         <div className="text-center text-[#555a68] font-InterLight text-[12px] mt-6">
