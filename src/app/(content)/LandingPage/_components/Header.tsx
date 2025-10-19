@@ -54,7 +54,9 @@ export default function Header() {
             <Link href="#faqs">FAQs</Link>
           </li>
           <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-            <Link href="https://docs.aptly.cloud">Resources</Link>
+            <Link target="_blank" href="https://docs.aptly.cloud">
+              Resources
+            </Link>
           </li>
         </ul>
 
@@ -90,7 +92,9 @@ export default function Header() {
               <Link href="#faqs">FAQs</Link>
             </li>
             <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
-              <Link href="https://docs.aptly.cloud">Resources</Link>
+              <Link target="_blank" href="https://docs.aptly.cloud">
+                Resources
+              </Link>
             </li>
 
             <li className="mt-2 px-4">
