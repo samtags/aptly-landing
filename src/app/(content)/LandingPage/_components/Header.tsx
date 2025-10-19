@@ -54,9 +54,11 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block md:absolute md:right-3">
-          <button className="bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 md:px-8 py-2.5 md:py-3 rounded-full text-[13px] md:text-[14px] font-medium">
-            Sign-In
-          </button>
+          <Link target="_blank" href="https://console.aptly.cloud/sign-in">
+            <button className="bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 md:px-8 py-2.5 md:py-3 rounded-full text-[13px] md:text-[14px] font-medium">
+              Sign-In
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -86,9 +88,11 @@ export default function Header() {
             </li>
 
             <li className="mt-2 px-4">
-              <button className="w-full bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 py-3 rounded-full text-[14px] font-medium">
-                Sign-In
-              </button>
+              <Link target="_blank" href="https://console.aptly.cloud/sign-in">
+                <button className="w-full bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 py-3 rounded-full text-[14px] font-medium">
+                  Sign-In
+                </button>
+              </Link>
             </li>
           </ul>
         </div>
