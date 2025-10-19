@@ -11,29 +11,28 @@ export function Faq() {
   const [activeCategory, setActiveCategory] = useState<Category>("General");
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-white">
       <div className="flex justify-center mb-6">
         <SectionBadge Icon={LiaQuestionCircleSolid} title="FAQs" />
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-16">
-          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
-            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+        <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
+          <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
+            <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
               Have questions?
             </span>
-            <br />
-            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+            <span className="text-[#0f1115] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block mt-1">
               We got answers.
             </span>
           </h2>
-          <p className="font-InterLight text-[#555a68] mx-auto">
-            We compiled a list of answers to address your <br /> most pressing
+          <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
+            We compiled a list of answers to address your <br className="hidden sm:block" /> most pressing
             questions.
           </p>
         </div>
 
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex bg-gray-100 rounded-full p-1 gap-1">
+        <div className="flex justify-center mb-8 overflow-x-auto">
+          <div className="inline-flex bg-gray-100 rounded-full p-1 gap-1 min-w-fit">
             {categories.map((category) => (
               <button
                 key={category}
@@ -41,7 +40,7 @@ export function Faq() {
                   setActiveCategory(category);
                   setOpenIndex(null);
                 }}
-                className={`px-6 py-2.5 rounded-full text-[14px] transition-all duration-500 ${
+                className={`px-4 sm:px-6 py-2.5 rounded-full text-[13px] sm:text-[14px] transition-all duration-500 whitespace-nowrap ${
                   activeCategory === category
                     ? "font-InterMedium text-[#0f1115] bg-white shadow-md"
                     : "text-gray-500 hover:text-[#0f1115]"
@@ -53,21 +52,21 @@ export function Faq() {
           </div>
         </div>
 
-        <div className="w-[700px] mx-auto">
+        <div className="w-full max-w-[700px] mx-auto">
           <QuestionCard />
         </div>
 
-        <div className="w-[700px] mx-auto mt-12">
-          <div className="flex justify-between items-center gap-4 text-center bg-[#f9fafb] rounded-2xl p-8">
-            <div className="text-left">
-              <header className="font-Satoshi text-[#0f1115] text-[20px] font-semibold">
+        <div className="w-full max-w-[700px] mx-auto mt-8 md:mt-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-center bg-[#f9fafb] rounded-2xl p-6 md:p-8">
+            <div className="text-left w-full sm:w-auto">
+              <header className="font-Satoshi text-[#0f1115] text-[18px] sm:text-[20px] font-semibold">
                 Can{"'"}t find your answer?
               </header>
               <p className="text-[#555a68] text-[14px] font-InterLight">
                 Get in touch with us we are happy to assist you!
               </p>
             </div>
-            <button className="flex items-center gap-2 bg-[#3b5beb] hover:bg-[#284ae2] text-[#ffffff] px-6 py-3 rounded-full transition-colors font-Inter text-[14px]">
+            <button className="flex items-center justify-center gap-2 bg-[#3b5beb] hover:bg-[#284ae2] text-[#ffffff] px-6 py-3 rounded-full transition-colors font-Inter text-[14px] w-full sm:w-auto whitespace-nowrap">
               <GrSend />
               Ask a Question
             </button>

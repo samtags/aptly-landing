@@ -10,22 +10,21 @@ import { cn } from "@/lib/utils/cn";
 
 export function Pricing() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-white">
       <div className="flex justify-center mb-6">
         <SectionBadge strokeWidth={2} Icon={PiGlobe} title="Pricing" />
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-16">
-          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
-            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+        <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
+          <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
+            <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
               Flexible pricing
             </span>
-            <br />
-            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+            <span className="text-[#0f1115] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block mt-1">
               Built to fit your needs
             </span>
           </h2>
-          <p className="font-InterLight text-[#555a68] mx-auto">
+          <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
             Choose from tailored licenses that fits your business goals and
             timeline.
           </p>
@@ -38,8 +37,8 @@ export function Pricing() {
         <PriceCard />
       </div>
 
-      <p className="text-center text-[12px] text-[#555a68] my-12 font-InterLight">
-        Please choose an option based on the number of users <br /> you want to
+      <p className="text-center text-[12px] text-[#555a68] my-8 md:my-12 font-InterLight px-4">
+        Please choose an option based on the number of users <br className="hidden sm:block" /> you want to
         access the figma file.
       </p>
     </section>

@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/cn";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 export default function Header() {
   const headerRef = useRef(null);
 
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -18,42 +20,83 @@ export default function Header() {
   }, []);
 
   return (
-    <nav
-      ref={headerRef}
-      className={cn(
-        "flex justify-center items-center sticky top-4 z-10 mx-auto p-3",
-        isSticky && "nav-blur-bg",
-        isSticky ? "max-w-4xl" : "max-w-6xl"
-      )}
-    >
-      <div className="absolute left-6">
-        <div className="text-[#adafb3] font-Satoshi font-medium text-2xl">
-          Logo
+    <>
+      <nav
+        ref={headerRef}
+        className={cn(
+          "flex justify-between md:justify-center items-center sticky top-4 z-10 mx-auto p-3 px-4 md:px-3",
+          isSticky && "nav-blur-bg",
+          isSticky ? "max-w-4xl" : "max-w-6xl"
+        )}
+      >
+        <div className="md:absolute md:left-6">
+          <div className="text-[#adafb3] font-Satoshi font-medium text-xl md:text-2xl">
+            Logo
+          </div>
         </div>
-      </div>
 
-      <ul className="flex items-center text-[#555a68] text-[14px]">
-        <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-          Benefits
-        </li>
-        <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-          Foundation
-        </li>
-        <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-          Features
-        </li>
-        <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-          Pricing
-        </li>
-        <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
-          FAQs
-        </li>
-      </ul>
-      <div className="absolute right-3">
-        <button className="bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-8 py-3 rounded-full text-[14px] font-medium">
-          Sign-In
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex items-center text-[#555a68] text-[14px]">
+          <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
+            Benefits
+          </li>
+          <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
+            Foundation
+          </li>
+          <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
+            Features
+          </li>
+          <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
+            Pricing
+          </li>
+          <li className="hover:text-[#0f1115] transition-all duration-300 px-3 rounded-full py-2 hover:bg-[#2c4a680f] cursor-pointer">
+            FAQs
+          </li>
+        </ul>
+
+        {/* Desktop CTA */}
+        <div className="hidden md:block md:absolute md:right-3">
+          <button className="bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 md:px-8 py-2.5 md:py-3 rounded-full text-[13px] md:text-[14px] font-medium">
+            Sign-In
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden text-[#555a68] text-2xl"
+        >
+          {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed top-[80px] left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-[#e5eaf0] shadow-lg mx-4 rounded-2xl">
+          <ul className="flex flex-col text-[#555a68] text-[14px] p-4">
+            <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
+              Benefits
+            </li>
+            <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
+              Foundation
+            </li>
+            <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
+              Features
+            </li>
+            <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
+              Pricing
+            </li>
+            <li className="hover:text-[#0f1115] transition-all duration-300 px-4 py-3 rounded-xl hover:bg-[#2c4a680f] cursor-pointer">
+              FAQs
+            </li>
+            <li className="mt-2 px-4">
+              <button className="w-full bg-[#3b5beb] text-white hover:bg-[#284ae2] transition-all duration-300 px-6 py-3 rounded-full text-[14px] font-medium">
+                Sign-In
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
+    </>
   );
 }

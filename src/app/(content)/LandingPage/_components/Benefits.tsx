@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils/cn";
 
 export function Benefits() {
   return (
-    <section className="py-20 px-4 bg-white max-w-5xl mx-auto">
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-white max-w-5xl mx-auto">
       <div className="flex justify-center mb-6">
         <SectionBadge
           strokeWidth={2}
@@ -23,23 +23,22 @@ export function Benefits() {
         />
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-16">
-          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
-            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+        <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
+          <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
+            <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
               Your current workflow is
             </span>
-            <br />
-            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+            <span className="text-[#0f1115] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block mt-1">
               Slowing you down!
             </span>
           </h2>
-          <p className="font-InterLight text-[#555a68] mx-auto">
+          <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
             Here is why you need a design system
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <Benefit
           Icon={PiLightningDuotone}
           title="Build Faster"
@@ -74,7 +73,7 @@ export function Benefits() {
         <Benefit
           Icon={PiAlignBottomDuotone}
           title="Scale Without the Mess"
-          description="As your project grows, so does the design complexity. SquareUI keeps things organized so it doesn’t fall apart."
+          description="As your project grows, so does the design complexity. SquareUI keeps things organized so it doesn't fall apart."
           borderRight
         />
 
@@ -109,9 +108,9 @@ function Benefit({
   return (
     <li
       className={cn(
-        "flex flex-col md:flex-row gap-4 p-4 md:p-10 border-dashed border-[#ebf0f5] relative",
-        borderRight && "border-0 md:border-r",
-        borderBottom ? "border-b" : "border-b md:border-0"
+        "flex flex-col sm:flex-row gap-4 p-6 sm:p-8 lg:p-10 border-dashed border-[#ebf0f5] relative",
+        borderRight && "border-0 lg:border-r",
+        borderBottom ? "border-b" : "border-b lg:border-0"
       )}
     >
       {showBall && (
@@ -119,12 +118,12 @@ function Benefit({
           <Ball />
         </div>
       )}
-      <Icon className="text-[#133cf0] text-[24px] mt-1" />
+      <Icon className="text-[#133cf0] text-[22px] sm:text-[24px] mt-0 sm:mt-1 flex-shrink-0" />
       <div className="max-w-[420px] space-y-2">
-        <header className="font-Satoshi font-semibold text-[#0f1115] text-[20px]">
+        <header className="font-Satoshi font-semibold text-[#0f1115] text-[18px] sm:text-[19px] lg:text-[20px]">
           {title}
         </header>
-        <p className="font-InterLight text-[#555a68] text-[14px] max-w-[320px]">
+        <p className="font-InterLight text-[#555a68] text-[14px] max-w-full sm:max-w-[320px]">
           {description}
         </p>
       </div>
