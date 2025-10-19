@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils/cn";
+import Image from "next/image";
 
 export default function Header() {
   const headerRef = useRef(null);
@@ -27,9 +28,7 @@ export default function Header() {
       )}
     >
       <div className="absolute left-6">
-        <div className="text-[#adafb3] font-Satoshi font-medium text-2xl">
-          Logo
-        </div>
+        <div className="text-black font-Satoshi font-black text-xl">Aptly</div>
       </div>
 
       <ul className="flex items-center text-[#555a68] text-[14px]">

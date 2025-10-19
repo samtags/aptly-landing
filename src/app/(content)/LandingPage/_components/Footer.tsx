@@ -7,8 +7,10 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto ">
         <div className="footer-grid">
           <div className="col-span-4 max-w-[320px]">
-            <div className="text-[#adafb3] font-Satoshi font-medium text-2xl mb-4">
-              Logo area
+            <div className="mb-4">
+              <div className="text-black font-Satoshi font-black text-xl font-Satoshi">
+                Aptly
+              </div>
             </div>
             <p className="text-[#555a68] font-Inter text-[14px]">
               The most Powerful Figma Ui Kit & Design System for designers.
