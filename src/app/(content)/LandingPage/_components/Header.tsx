@@ -37,7 +37,7 @@ export default function Header() {
         )}
       >
         <div className="md:absolute md:left-6">
-          <div className="text-black font-Satoshi font-black text-xl select-none cursor-pointer">
+          <div className="text-black font-Satoshi font-bold text-xl select-none cursor-pointer">
             <Link href="/#hero">Aptly</Link>
           </div>
         </div>

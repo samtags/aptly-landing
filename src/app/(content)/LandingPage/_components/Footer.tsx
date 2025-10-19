@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="col-span-4 max-w-[320px]">
             <div className="mb-4">
-              <div className="text-black font-Satoshi font-black text-xl font-Satoshi">
+              <div className="text-black font-Satoshi font-bold text-xl font-Satoshi">
                 Aptly
               </div>
             </div>
@@ -72,7 +72,9 @@ export default function Footer() {
 
           <div className="flex">
             <ul className="flex gap-2 text-[12px]">
-              <li>Built in Framer</li>
+              <li>
+                Built using <strong>Next</strong>
+              </li>
               <li className="text-[#adafb3]">Icons (1)</li>
               <li className="text-[#adafb3]">Icon (2)</li>
               <li className="text-[#adafb3]">Icon (3)</li>
