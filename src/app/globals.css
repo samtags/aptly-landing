@@ -32,6 +32,8 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overflow-y: scroll;
 }
 
 body {
