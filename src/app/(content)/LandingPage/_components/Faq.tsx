@@ -26,8 +26,8 @@ export function Faq() {
             </span>
           </h2>
           <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
-            We compiled a list of answers to address your <br className="hidden sm:block" /> most pressing
-            questions.
+            We compiled a list of answers to address your{" "}
+            <br className="hidden sm:block" /> most pressing questions.
           </p>
         </div>
 

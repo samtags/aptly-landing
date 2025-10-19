@@ -19,19 +19,33 @@ export default function Footer() {
             <li className="font-medium text-[#0f1115] text-[14px] mb-5">
               Company
             </li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Pricing</li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Contact us</li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Become an Affiliate</li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Projects</li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Pricing
+            </li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Contact us
+            </li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Become an Affiliate
+            </li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Projects
+            </li>
           </ul>
 
           <ul className="space-y-2">
             <li className="font-medium text-[#0f1115] text-[14px] mb-5">
               Socials
             </li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Behance</li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Dribble</li>
-            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">Twitter/X</li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Behance
+            </li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Dribble
+            </li>
+            <li className="text-[#555a68] text-[14px] hover:text-[#0f1115] cursor-pointer transition-colors">
+              Twitter/X
+            </li>
           </ul>
 
           <div className="w-full space-y-2 sm:col-span-2 lg:col-span-2">

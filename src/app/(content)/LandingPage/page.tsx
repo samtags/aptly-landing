@@ -6,10 +6,12 @@ import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import { Blur } from "./_components/Blur";
 import Patterns from "./_components/Patterns";
+import PageClient from "./_components/Page.client";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <PageClient />
       <Blur />
       <Patterns />
       <Header />

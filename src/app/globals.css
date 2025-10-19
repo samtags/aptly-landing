@@ -34,8 +34,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Inter, sans-serif;
-  overscroll-behavior: none;
-  overflow: scroll;
 }
 
 @layer utilities {
@@ -146,12 +144,12 @@ body {
   z-index: 1;
   flex: none;
   width: 100%;
+  height: 100%;
   max-width: 76rem;
   position: absolute;
   top: 0;
   left: calc(50% - min(76rem, 100%) / 2);
   overflow: visible;
-  height: 9000px;
 }
 
 .verticle-lines .left {
@@ -184,4 +182,20 @@ body {
   bottom: 0;
   right: 0;
   overflow: visible;
+}
+
+.horizontal-elements {
+  max-width: 76rem;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.horizontal-line {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  left: 0;
+  border-bottom-width: 1px;
+  border-color: #e1e1e1;
+  border-style: dashed;
 }

@@ -32,14 +32,20 @@ export function Pricing() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-        <PriceCard />
-        <PriceCard highlight badge="Popular" />
-        <PriceCard />
+        <div data-aos="fade-up" data-aos-delay="250">
+          <PriceCard />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="500">
+          <PriceCard highlight badge="Popular" />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="750">
+          <PriceCard />
+        </div>
       </div>
 
       <p className="text-center text-[12px] text-[#555a68] my-8 md:my-12 font-InterLight px-4">
-        Please choose an option based on the number of users <br className="hidden sm:block" /> you want to
-        access the figma file.
+        Please choose an option based on the number of users{" "}
+        <br className="hidden sm:block" /> you want to access the figma file.
       </p>
     </section>
   );
