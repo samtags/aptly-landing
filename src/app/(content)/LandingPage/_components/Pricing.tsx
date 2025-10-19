@@ -11,31 +11,39 @@ import { cn } from "@/lib/utils/cn";
 export function Pricing() {
   return (
     <section className="py-20 px-4 bg-white">
-      <div className="flex justify-center mb-6">
-        <SectionBadge strokeWidth={2} Icon={PiGlobe} title="Pricing" />
-      </div>
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-16">
-          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
-            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
-              Flexible pricing
-            </span>
-            <br />
-            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
-              Built to fit your needs
-            </span>
-          </h2>
-          <p className="font-InterLight text-[#555a68] mx-auto">
-            Choose from tailored licenses that fits your business goals and
-            timeline.
-          </p>
+      <div data-aos="fade-up">
+        <div className="flex justify-center mb-6">
+          <SectionBadge strokeWidth={2} Icon={PiGlobe} title="Pricing" />
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center items-center mb-16">
+            <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
+              <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+                Flexible pricing
+              </span>
+              <br />
+              <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+                Built to fit your needs
+              </span>
+            </h2>
+            <p className="font-InterLight text-[#555a68] mx-auto">
+              Choose from tailored licenses that fits your business goals and
+              timeline.
+            </p>
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-        <PriceCard />
-        <PriceCard highlight badge="Popular" />
-        <PriceCard />
+        <div data-aos="fade-up" data-aos-delay="250">
+          <PriceCard />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="500">
+          <PriceCard highlight badge="Popular" />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="750">
+          <PriceCard />
+        </div>
       </div>
 
       <p className="text-center text-[12px] text-[#555a68] my-12 font-InterLight">

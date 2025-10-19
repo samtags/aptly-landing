@@ -12,11 +12,13 @@ export function Faq() {
 
   return (
     <section className="py-20 px-4 bg-white">
-      <div className="flex justify-center mb-6">
-        <SectionBadge Icon={LiaQuestionCircleSolid} title="FAQs" />
+      <div data-aos="fade-up">
+        <div className="flex justify-center mb-6">
+          <SectionBadge Icon={LiaQuestionCircleSolid} title="FAQs" />
+        </div>
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-16">
+        <div data-aos="fade-up" className="text-center items-center mb-16">
           <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
             <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
               Have questions?

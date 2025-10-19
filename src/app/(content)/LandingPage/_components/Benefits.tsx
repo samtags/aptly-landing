@@ -15,31 +15,37 @@ import { cn } from "@/lib/utils/cn";
 export function Benefits() {
   return (
     <section className="py-20 px-4 bg-white max-w-5xl mx-auto">
-      <div className="flex justify-center mb-6">
-        <SectionBadge
-          strokeWidth={2}
-          Icon={HiOutlineShieldCheck}
-          title="Benefits"
-        />
-      </div>
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center items-center mb-16">
-          <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
-            <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
-              Your current workflow is
-            </span>
-            <br />
-            <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
-              Slowing you down!
-            </span>
-          </h2>
-          <p className="font-InterLight text-[#555a68] mx-auto">
-            Here is why you need a design system
-          </p>
+      <div data-aos="fade-up">
+        <div className="flex justify-center mb-6">
+          <SectionBadge
+            strokeWidth={2}
+            Icon={HiOutlineShieldCheck}
+            title="Benefits"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center items-center mb-16">
+            <h2 className="font-Satoshi font-semibold leading-[36px] text-[28px] md:text-[40px] md:leading-[48px] text-[#8b8f98] mb-4">
+              <span className="text-[#8b8f98] text-[40px] tracking-[-2px]">
+                Your current workflow is
+              </span>
+              <br />
+              <span className="text-[#0f1115] text-[40px] tracking-[-2px]">
+                Slowing you down!
+              </span>
+            </h2>
+            <p className="font-InterLight text-[#555a68] mx-auto">
+              Here is why you need a design system
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="500"
+        className="grid grid-cols-1 md:grid-cols-2"
+      >
         <Benefit
           Icon={PiLightningDuotone}
           title="Build Faster"
