@@ -20,21 +20,21 @@ export function Benefits() {
           <SectionBadge
             strokeWidth={2}
             Icon={HiOutlineShieldCheck}
-            title="Benefits"
+            title="Features"
           />
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="text-center items-center mb-10 md:mb-14 lg:mb-16">
             <h2 className="font-Satoshi font-semibold text-[#8b8f98] mb-4">
               <span className="text-[#8b8f98] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block">
-                Your current workflow is
+                Everything you need
               </span>
               <span className="text-[#0f1115] text-[28px] sm:text-[34px] lg:text-[40px] leading-[34px] sm:leading-[40px] lg:leading-[48px] tracking-[-1.5px] lg:tracking-[-2px] block mt-1">
-                Slowing you down!
+                for live, connected applications
               </span>
             </h2>
             <p className="font-InterLight text-[14px] sm:text-[15px] lg:text-[16px] text-[#555a68] mx-auto px-4 sm:px-0">
-              Here is why you need a design system
+              Here{"'"}s what powers reliable, real-time experiences.
             </p>
           </div>
         </div>
@@ -43,23 +43,23 @@ export function Benefits() {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <Benefit
           Icon={PiLightningDuotone}
-          title="Build Faster"
-          description="SquareUi helps you skip the setup and jump straight into design. All components are ready to use and well-organized."
+          title="Limitless fan-out"
+          description="Broadcast updates to millions of subscribers in real time — no throttling, no limits."
           borderRight
           borderBottom
         />
 
         <Benefit
           Icon={PiCalendarSlashDuotone}
-          title="Stay Consistent"
-          description="Using a design system with unified styles, grids, and variables keeps Everything working together, no guessing or manual tweaks."
+          title="Topics"
+          description="Organize your data streams effortlessly. Send messages only to the users or rooms that need them."
           borderBottom
         />
 
         <Benefit
           Icon={PiPuzzlePieceDuotone}
-          title="Stop Rebuilding the Basics"
-          description="You don't need to remake buttons, forms, or cards from scratch on every project. SquareUI gives you everything upfront."
+          title="History"
+          description="Access recent messages even after reconnecting. Perfect for dashboards, logs, or chat replays."
           borderRight
           borderBottom
         />
@@ -67,23 +67,23 @@ export function Benefits() {
         <Benefit
           Icon={PiLightbulbDuotone}
           showBall
-          title="Work Smarter, Not Harder"
-          description="A design system saves hours on every project. Spend more time on product thinking, not pushing pixels."
+          title="Rewind"
+          description="Revisit past events by replaying message streams — ideal for debugging, analytics, or missed updates."
           borderBottom
         />
 
         <Benefit
           Icon={PiAlignBottomDuotone}
-          title="Scale Without the Mess"
-          description="As your project grows, so does the design complexity. SquareUI keeps things organized so it doesn't fall apart."
+          title="Connection state and recovery"
+          description="Detect dropped connections and auto-resume sessions without missing a single message."
           borderRight
         />
 
         <Benefit
           showBall
           Icon={PiPresentationChartDuotone}
-          title="Get Everyone on the Same Page"
-          description="Designers and devs use the same components and rules, That means fewer mistakes, faster delivery, and less back-and-forth."
+          title="Deliver once"
+          description="Guaranteed single delivery — no duplicates, even across reconnects or network hiccups."
         />
       </div>
     </section>

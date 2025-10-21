@@ -10,7 +10,7 @@ export default function Patterns() {
         </div>
       </div>
       <div className="horizontal-line" />
-      <div className="verticle-lines">
+      <div className="vertical-lines">
         <div className="left" />
         <div className="right" />
       </div>
