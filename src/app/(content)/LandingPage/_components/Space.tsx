@@ -21,22 +21,56 @@ export default function Space() {
   );
   const [currentUserStatus, setCurrentUserStatus] =
     useState<ClientStatus>("inactive");
+  const [hasEntered, setHasEntered] = useState(false);
   const idRef = useRef(v7());
   const id = idRef.current;
 
   const publish = usePublish("spaces");
   const heartbeatIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const currentUserIdleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const currentUserAbandonTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   /**
-   * Cleanup heartbeat interval on unmount.
+   * Cleanup intervals and timers on unmount.
    */
   useEffect(() => {
     return () => {
       if (heartbeatIntervalRef.current) {
         clearInterval(heartbeatIntervalRef.current);
       }
+      if (currentUserIdleTimerRef.current) {
+        clearTimeout(currentUserIdleTimerRef.current);
+      }
+      if (currentUserAbandonTimerRef.current) {
+        clearTimeout(currentUserAbandonTimerRef.current);
+      }
     };
   }, []);
+
+  /**
+   * Restarts the current user's idle timer (30s timeout).
+   */
+  function restartCurrentUserIdleTimer() {
+    if (currentUserIdleTimerRef.current) {
+      clearTimeout(currentUserIdleTimerRef.current);
+    }
+    currentUserIdleTimerRef.current = setTimeout(() => {
+      setCurrentUserStatus("inactive");
+    }, 1000 * 30);
+  }
+
+  /**
+   * Restarts the current user's abandon timer (60s timeout).
+   */
+  function restartCurrentUserAbandonTimer() {
+    if (currentUserAbandonTimerRef.current) {
+      clearTimeout(currentUserAbandonTimerRef.current);
+    }
+    currentUserAbandonTimerRef.current = setTimeout(() => {
+      setHasEntered(false);
+      setCurrentUserStatus("inactive");
+    }, 1000 * 60);
+  }
 
   /**
    * Handles incoming stream messages for client state management.
@@ -122,6 +156,9 @@ export default function Space() {
     function handleMouseMove(e: MouseEvent) {
       throttledUI(e);
       throttledServer(e);
+      // Reset current user's idle/abandon timers on every mouse movement
+      restartCurrentUserIdleTimer();
+      restartCurrentUserAbandonTimer();
     }
 
     const el = document.getElementById("space");
@@ -137,10 +174,12 @@ export default function Space() {
   /**
    * Starts heartbeat interval when mouse enters the space.
    * Sends active message and sets up periodic heartbeat.
+   * Also marks user as entered and starts idle/abandon timers.
    */
   function handleMouseEnter() {
     document.body.style.cursor = "none";
     setCurrentUserStatus("active");
+    setHasEntered(true);
 
     // Send active message
     publish({
@@ -161,6 +200,10 @@ export default function Space() {
         name,
       });
     }, 5000);
+
+    // Start idle/abandon timers
+    restartCurrentUserIdleTimer();
+    restartCurrentUserAbandonTimer();
   }
 
   /**
@@ -233,8 +276,8 @@ export default function Space() {
 
       {/* Avatars section */}
       <div className="absolute top-4 left-4 flex pointer-events-none">
-        {/* Current client avatar */}
-        <Avatar name={name} status={currentUserStatus} />
+        {/* Current client avatar - only show if user has entered */}
+        {hasEntered && <Avatar name={name} status={currentUserStatus} />}
 
         {/* Other clients avatars */}
         {otherClients.map((client) => (
