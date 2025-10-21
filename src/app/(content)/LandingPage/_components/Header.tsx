@@ -12,6 +12,10 @@ export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  function handleClickHome() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   useEffect(() => {
     setIsSticky(window.scrollY > 120);
 
@@ -38,7 +42,9 @@ export default function Header() {
       >
         <div className="md:absolute md:left-6">
           <div className="text-black font-Satoshi font-bold text-xl select-none cursor-pointer">
-            <Link href="/#hero">Aptly</Link>
+            <Link onClick={handleClickHome} href="/#">
+              Aptly
+            </Link>
           </div>
         </div>
 

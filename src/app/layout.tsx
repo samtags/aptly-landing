@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, InterBold, Satoshi } from "@/lib/utils/customFont";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Aptly - Built to deliver",
@@ -18,7 +19,9 @@ export default function RootLayout({
       lang="en"
       className={`${Satoshi.variable} ${Inter.variable} ${InterBold.variable}`}
     >
-      <body className="">{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

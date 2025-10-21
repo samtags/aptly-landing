@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Space from "./Space";
 
 export function Hero() {
   return (
@@ -37,9 +38,7 @@ export function Hero() {
           Connect once — Scale automatically.
         </div>
 
-        <div className="pt-4 text-center text-[#555a68] font-InterLight text-[12px] mt-6 h-[280px] sm:h-[340px] lg:h-[380px] bg-[#f9fafb] rounded-2xl sm:rounded-3xl mx-4 sm:mx-0">
-          Show case area (real-time mini-app)
-        </div>
+        <Space />
       </div>
     </section>
   );
