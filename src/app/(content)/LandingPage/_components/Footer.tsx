@@ -1,12 +1,68 @@
+"use client";
+
+import { useState } from "react";
 import { LiaAtSolid } from "react-icons/lia";
 import { HiArrowRight } from "react-icons/hi";
 import Link from "next/link";
 import { RiGithubFill } from "react-icons/ri";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { toast } from "sonner";
 
+/**
+ * Footer component with waitlist signup functionality.
+ *
+ * @returns {JSX.Element} The footer component
+ */
 export default function Footer() {
   const today = new Date();
   const currentYear = today.getFullYear();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  /**
+   * Handles waitlist form submission.
+   * Sends email to API and displays appropriate toast messages.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e - Form submit event
+   */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Basic email validation
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Successfully joined the waitlist!");
+        setEmail(""); // Clear input on success
+      } else {
+        toast.error(
+          data.error ||
+            "Unable to join the waitlist for the moment. Please try again later."
+        );
+      }
+    } catch (error) {
+      console.error("Waitlist submission error:", error);
+      toast.error("An unexpected error occurred");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer className="rounded-[52px] bg-[#f9fafb] m-6 lg:pt-12 p-6">
@@ -62,20 +118,32 @@ export default function Footer() {
               access.
             </div>
 
-            <div className="bg-white rounded-full flex items-center gap-2 p-4 w-full relative">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-full flex items-center gap-2 p-4 w-full relative"
+            >
               <span>
                 <LiaAtSolid className="text-[#8b8f98] text-[14px] w-4 h-4" />
               </span>
               <input
-                className="w-full outline-none text-[14px] font-Inter text-[#333842] max-w-[80%]"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full outline-none text-[14px] font-Inter text-[#333842] max-w-[80%] disabled:bg-transparent"
                 placeholder="Enter your email"
+                disabled={isSubmitting}
+                required
               />
               <div className="absolute right-2">
-                <button className="bg-[#3b5beb] text-white px-6 py-3 rounded-full text-[14px] font-Inter font-medium  ">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-[#3b5beb] text-white px-6 py-3 rounded-full text-[14px] font-Inter font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                >
                   <HiArrowRight className="text-white text-[16px]" />
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
         <div className="flex justify-between lg:items-center items-end pt-8 lg:py-8 text-[#333842]">

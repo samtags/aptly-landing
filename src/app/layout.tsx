@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, InterBold, Satoshi } from "@/lib/utils/customFont";
 import Providers from "./providers";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Aptly - Built to deliver",
@@ -21,6 +22,7 @@ export default function RootLayout({
     >
       <body>
         <Providers>{children}</Providers>
+        <Toaster position="bottom-center" />
       </body>
     </html>
   );
