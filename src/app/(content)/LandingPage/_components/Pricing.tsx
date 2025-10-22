@@ -49,7 +49,12 @@ export function Pricing() {
               "Developer dashboard access",
               "Free forever",
             ]}
-            bestFor={["Experimentation", "Hobby projects", "Proofs of concept"]}
+            bestFor={[
+              "Best for:",
+              "Experimentation",
+              "Hobby projects",
+              "Proofs of concept",
+            ]}
             Icon={PiCodeDuotone}
           />
         </div>
@@ -69,6 +74,7 @@ export function Pricing() {
               "Pay as you go",
             ]}
             bestFor={[
+              "Great if you have:",
               "Growing applications",
               "Startup launches",
               "Dynamic workloads",
@@ -90,6 +96,7 @@ export function Pricing() {
               "Fixed variable cost",
             ]}
             bestFor={[
+              "Perfect for:",
               "Production deployments",
               "Mission-critical systems",
               "High-scale platforms",

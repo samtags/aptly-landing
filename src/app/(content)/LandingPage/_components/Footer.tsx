@@ -1,5 +1,8 @@
 import { LiaAtSolid } from "react-icons/lia";
 import { HiArrowRight } from "react-icons/hi";
+import Link from "next/link";
+import { RiGithubFill } from "react-icons/ri";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const today = new Date();
@@ -11,12 +14,13 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="col-span-4 max-w-[320px]">
             <div className="mb-4">
-              <div className="text-black font-Satoshi font-bold text-xl font-Satoshi">
+              <div className="text-black font-Satoshi font-bold text-xl">
                 Aptly
               </div>
             </div>
             <p className="text-[#555a68] font-Inter text-[14px]">
-              The most Powerful Figma Ui Kit & Design System for designers.
+              Power your app with real-time updates at any scale — fully
+              managed, zero maintenance, always live.
             </p>
           </div>
 
@@ -24,17 +28,28 @@ export default function Footer() {
             <li className="font-medium text-[#0f1115] text-[14px] mb-5">
               Company
             </li>
-            <li className="text-[#555a68] text-[14px]">Pricing</li>
-            <li className="text-[#555a68] text-[14px]">Contact us</li>
-            <li className="text-[#555a68] text-[14px]">Become an Affiliate</li>
-            <li className="text-[#555a68] text-[14px]">Projects</li>
+            <li className="text-[#555a68] text-[14px]">
+              <Link href="/#features">Features</Link>
+            </li>
+            <li className="text-[#555a68] text-[14px]">
+              <Link href="/#pricing">Pricing</Link>
+            </li>
+            <li className="text-[#555a68] text-[14px]">
+              {" "}
+              <Link href="/#faqs">FAQs</Link>
+            </li>
+
+            <li className="text-[#555a68] text-[14px]">
+              <Link target="_blank" href="https://docs.aptly.cloud">
+                Resources
+              </Link>
+            </li>
           </ul>
           <ul className="space-y-2">
             <li className="font-medium text-[#0f1115] text-[14px] mb-5">
               Socials
             </li>
-            <li className="text-[#555a68] text-[14px]">Behance</li>
-            <li className="text-[#555a68] text-[14px]">Dribble</li>
+            <li className="text-[#555a68] text-[14px]">Github</li>
             <li className="text-[#555a68] text-[14px]">Twitter/X</li>
           </ul>
 
@@ -66,18 +81,22 @@ export default function Footer() {
         <div className="flex justify-between items-center py-8 text-[#333842]">
           <ul className="flex gap-2 text-[12px]">
             <li>© {currentYear} Aptly</li>
+            <li className="hidden sm:inline">•</li>
             <li>All rights reserved</li>
+            <li className="hidden sm:inline">•</li>
             <li>Design by Rabii Mhamdi</li>
+            <li className="hidden sm:inline">•</li>
+            <li>Built using Next</li>
           </ul>
 
           <div className="flex">
-            <ul className="flex gap-2 text-[12px]">
-              <li>
-                Built using <strong>Next</strong>
+            <ul className="flex gap-2 text-[12px] items-center">
+              <li className="text-[#adafb3] text-xl">
+                <RiGithubFill />
               </li>
-              <li className="text-[#adafb3]">Icons (1)</li>
-              <li className="text-[#adafb3]">Icon (2)</li>
-              <li className="text-[#adafb3]">Icon (3)</li>
+              <li className="text-[#adafb3] text-xl">
+                <FaSquareXTwitter />
+              </li>
             </ul>
           </div>
         </div>

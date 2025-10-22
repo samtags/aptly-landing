@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { GrSend } from "react-icons/gr";
 import { LiaQuestionCircleSolid } from "react-icons/lia";
@@ -37,7 +37,7 @@ export function Faq() {
           </p>
         </div>
 
-        <div className="flex justify-center mb-8 overflow-x-auto">
+        {/* <div className="flex justify-center mb-8 overflow-x-auto">
           <div className="inline-flex bg-gray-100 rounded-full p-1 gap-1 min-w-fit">
             {categories.map((category) => (
               <button
@@ -56,10 +56,28 @@ export function Faq() {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="w-full max-w-[700px] mx-auto">
-          <QuestionCard />
+        <div className="w-full max-w-[700px] mx-auto space-y-4">
+          <QuestionCard
+            question="Do you offer a free trial?"
+            answer="Our Starter plan is free forever. The Flexible plan is Pay as you go. You will only be charge on the usage of your app."
+          />
+
+          <QuestionCard
+            question="What if I exceed my quota / limit?"
+            answer="In Started, we will throttle or limit further publishes. In Flexible, you'll be charged on your usage. We also offer alerting so you'll be notified before you hit your set budget."
+          />
+
+          <QuestionCard
+            question="What SDKs or languages are supported?"
+            answer="We provide official SDKs for JavaScript / TypeScript, Python, Java, Go, and mobile (iOS/Android). You can also use raw WebSocket if you prefer."
+          />
+
+          <QuestionCard
+            question="How is billing handled?"
+            answer="You'll be billed monthly based on usage (message sent, bandwidth). We accept major credit cards, invoicing, or enterprise payment methods depending on your plan."
+          />
         </div>
 
         <div className="w-full max-w-[700px] mx-auto mt-8 md:mt-12">
@@ -83,8 +101,13 @@ export function Faq() {
   );
 }
 
-function QuestionCard() {
-  const [isOpen, setIsOpen] = useState(false);
+interface QuestionCardProps {
+  question: ReactNode | string;
+  answer: ReactNode | string;
+}
+
+function QuestionCard({ question, answer }: QuestionCardProps) {
+  const [isOpen, setIsOpen] = useState(true);
 
   const Icon = isOpen ? BiMinus : BiPlus;
 
@@ -96,25 +119,14 @@ function QuestionCard() {
             isOpen ? "faq-active-box-shadow" : ""
           }`}
         >
-          Why do i need a ui Kit / design system?
+          {question}
           <div className="bg-[#f0f2f5] w-[20px] h-[20px] rounded-full flex items-center justify-center ml-4">
             <Icon strokeWidth={1} />
           </div>
         </header>
       </button>
       {isOpen && (
-        <div className="p-4 px-6 font-InterLight text-[#555a68]">
-          <div>
-            Using a UI Kit can significantly reduce design time and enhance
-            productivity.
-          </div>
-          <div className="mt-4">
-            It provides a solid foundation of design principles, allowing you to
-            quickly prototype and iterate on your ideas. With reusable
-            components, you can maintain consistency in your designs and improve
-            collaboration with team members.
-          </div>
-        </div>
+        <div className="p-4 px-6 font-InterLight text-[#555a68]">{answer}</div>
       )}
     </div>
   );
