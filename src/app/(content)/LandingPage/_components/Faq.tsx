@@ -5,6 +5,7 @@ import { BiPlus, BiMinus } from "react-icons/bi";
 import { GrSend } from "react-icons/gr";
 import { LiaQuestionCircleSolid } from "react-icons/lia";
 import { SectionBadge } from "./SectionBadge";
+import Link from "next/link";
 
 export function Faq() {
   const [_, setOpenIndex] = useState<number | null>(null);
@@ -90,10 +91,12 @@ export function Faq() {
                 Get in touch with us we are happy to assist you!
               </p>
             </div>
-            <button className="flex items-center justify-center gap-2 bg-[#3b5beb] hover:bg-[#284ae2] text-[#ffffff] px-6 py-3 rounded-full transition-colors font-Inter text-[14px] w-full sm:w-auto whitespace-nowrap">
-              <GrSend />
-              Ask a Question
-            </button>
+            <Link target="_blank" href="https://aptly.featurebase.app/">
+              <button className="flex items-center justify-center gap-2 bg-[#3b5beb] hover:bg-[#284ae2] text-[#ffffff] px-6 py-3 rounded-full transition-colors font-Inter text-[14px] w-full sm:w-auto whitespace-nowrap">
+                <GrSend />
+                Ask a Question
+              </button>
+            </Link>
           </div>
         </div>
       </div>

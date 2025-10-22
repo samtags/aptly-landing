@@ -9,9 +9,9 @@ export default function Footer() {
   const currentYear = today.getFullYear();
 
   return (
-    <footer className="rounded-[52px] bg-[#f9fafb] m-6 pt-12">
+    <footer className="rounded-[52px] bg-[#f9fafb] m-6 lg:pt-12 p-6">
       <div className="max-w-6xl mx-auto ">
-        <div className="footer-grid">
+        <div className="flex flex-col lg:grid grid-cols-1 md:grid-cols-4 gap-[40px]">
           <div className="col-span-4 max-w-[320px]">
             <div className="mb-4">
               <div className="text-black font-Satoshi font-bold text-xl">
@@ -78,14 +78,14 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center py-8 text-[#333842]">
-          <ul className="flex gap-2 text-[12px]">
+        <div className="flex justify-between lg:items-center items-end pt-8 lg:py-8 text-[#333842]">
+          <ul className="flex flex-col lg:flex-row gap-2 text-[12px]">
             <li>© {currentYear} Aptly</li>
-            <li className="hidden sm:inline">•</li>
+            <li className="hidden lg:block">•</li>
             <li>All rights reserved</li>
-            <li className="hidden sm:inline">•</li>
+            <li className="hidden lg:block">•</li>
             <li>Design by Rabii Mhamdi</li>
-            <li className="hidden sm:inline">•</li>
+            <li className="hidden lg:block">•</li>
             <li>Built using Next</li>
           </ul>
 
