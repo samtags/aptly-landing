@@ -25,7 +25,7 @@ export default function Footer() {
    *
    * @param {React.FormEvent<HTMLFormElement>} e - Form submit event
    */
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Basic email validation
