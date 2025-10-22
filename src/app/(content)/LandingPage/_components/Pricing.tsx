@@ -86,8 +86,8 @@ export function Pricing() {
           <PriceCard
             plan="Pro"
             description="For production teams and high-traffic apps that demand performance, advanced controls, and priority support."
-            price="$20"
-            smallPrice="/ per month"
+            price="$"
+            smallPrice="Contact us"
             inclusions={[
               "Up to 15M messages / month",
               "Up to 100K concurrent connections",
