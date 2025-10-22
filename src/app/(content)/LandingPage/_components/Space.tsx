@@ -22,6 +22,7 @@ export default function Space() {
   const [currentUserStatus, setCurrentUserStatus] =
     useState<ClientStatus>("inactive");
   const [hasEntered, setHasEntered] = useState(false);
+  const hasOtherClientsRef = useRef(false);
   const idRef = useRef(v7());
   const id = idRef.current;
 
@@ -29,6 +30,17 @@ export default function Space() {
   const heartbeatIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const currentUserIdleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const currentUserAbandonTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  /**
+   * Updates the hasOtherClientsRef whenever clients state changes.
+   * Reason: Avoid heavy computation on every mouse move by caching the result.
+   */
+  useEffect(() => {
+    const otherClientsCount = Object.values(clients).filter(
+      (client) => client.id !== id
+    ).length;
+    hasOtherClientsRef.current = otherClientsCount > 0;
+  }, [clients, id]);
 
   /**
    * Cleanup intervals and timers on unmount.
@@ -132,7 +144,16 @@ export default function Space() {
       targetEl.style.top = `${y}px`;
     }
 
+    /**
+     * Publishes mouse movement to server only if other clients are connected.
+     * Reason: Optimize bandwidth by not sending data when no one else is present.
+     *
+     * @param {MouseEvent} e - The mouse movement event.
+     */
     function handleMouseMoveToServer(e: MouseEvent) {
+      // Only publish if there are other clients connected
+      if (!hasOtherClientsRef.current) return;
+
       const target = e.target as HTMLElement;
       const rect = target.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -194,11 +215,15 @@ export default function Space() {
     }
 
     heartbeatIntervalRef.current = setInterval(() => {
-      publish({
-        type: "heartbeat",
-        id,
-        name,
-      });
+      // Only send heartbeat if there are other clients connected
+      // Reason: Optimize bandwidth by not sending periodic updates when alone
+      if (hasOtherClientsRef.current) {
+        publish({
+          type: "heartbeat",
+          id,
+          name,
+        });
+      }
     }, 5000);
 
     // Start idle/abandon timers
@@ -208,6 +233,8 @@ export default function Space() {
 
   /**
    * Stops heartbeat and sends inactive message when mouse leaves.
+   * Only sends inactive message if other clients are connected.
+   * Reason: Optimize bandwidth by not sending messages when no one is listening.
    */
   function handleMouseLeave() {
     document.body.style.cursor = "default";
@@ -219,12 +246,14 @@ export default function Space() {
       heartbeatIntervalRef.current = null;
     }
 
-    // Send inactive message
-    publish({
-      type: "inactive",
-      id,
-      name,
-    });
+    // Only send inactive message if there are other clients connected
+    if (hasOtherClientsRef.current) {
+      publish({
+        type: "inactive",
+        id,
+        name,
+      });
+    }
   }
 
   // Filter out current client and get active clients
