@@ -217,7 +217,7 @@ function PriceCard({
             "font-Inter text-[14px] border rounded-full px-6 py-3 w-full transition-all duration-300 flex items-center justify-center gap-2",
             highlight
               ? "bg-[#3b5beb] text-white hover:bg-[#284ae2] border-[#3b5beb] hover:border-[#284ae2]"
-              : "hover:bg-[#f9fbfb] border-[#d9dfe8]"
+              : "hover:bg-[#f9fbfb] border-[#d9dfe8] text-[#333842]"
           )}
         >
           Choose {plan}
