@@ -149,9 +149,6 @@ export default function Footer() {
         <div className="flex justify-between lg:items-center items-end pt-8 lg:py-8 text-[#333842]">
           <ul className="flex flex-col lg:flex-row gap-2 text-[12px]">
             <li>© {currentYear} Aptly</li>
-
-            <li className="hidden lg:block">•</li>
-            <li>Built using Next.js</li>
             <li className="hidden lg:block">•</li>
             <Link
               className="underline"
@@ -167,6 +164,10 @@ export default function Footer() {
             <li className="hidden lg:block">•</li>
             <Link href="/privacy-policy.html" className="underline">
               Privacy Policy
+            </Link>
+            <li className="hidden lg:block">•</li>
+            <Link href="/return-policy.html" className="underline">
+              Return Policy
             </Link>
           </ul>
 
