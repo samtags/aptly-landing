@@ -149,12 +149,25 @@ export default function Footer() {
         <div className="flex justify-between lg:items-center items-end pt-8 lg:py-8 text-[#333842]">
           <ul className="flex flex-col lg:flex-row gap-2 text-[12px]">
             <li>© {currentYear} Aptly</li>
+
             <li className="hidden lg:block">•</li>
-            <li>All rights reserved</li>
+            <li>Built using Next.js</li>
             <li className="hidden lg:block">•</li>
-            <li>Design by Rabii Mhamdi</li>
+            <Link
+              className="underline"
+              target="_blank"
+              href="https://www.framer.com/@rabii-mhamdi/"
+            >
+              Design by Rabii Mhamdi
+            </Link>
             <li className="hidden lg:block">•</li>
-            <li>Built using Next</li>
+            <Link href="/terms-condition.html" className="underline">
+              Terms and Conditions
+            </Link>
+            <li className="hidden lg:block">•</li>
+            <Link href="/privacy-policy.html" className="underline">
+              Privacy Policy
+            </Link>
           </ul>
 
           <div className="flex">
